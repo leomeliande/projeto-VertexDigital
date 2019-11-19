@@ -1,78 +1,80 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+### PROJETO BACK-END - VERTEX DIGITAL - Aplicação WEB feita em linguagem PHP
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+Esta é uma API para armazenamento de contatos, uma agenda que contém dados simples: nome, telefone, email e CEP. O CEP é validado através de uma API pública chamada <a href="https://viacep.com.br/">ViaCEP</a>.
 
-## About Laravel
+Pré-requisitos:
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- <i>Composer</i>
+- <i>MySQL</i>
+- <i>PHP</i>
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Instalação:
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- Antes de tudo, deve-se instalar as dependências do projeto, utilizando o comando:
 
-## Learning Laravel
+    <i>composer install</i>
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- Em seguida, criar o banco de dados no MySQL com o comando CREATE DATABASE <i>nomedobanco</i> e atualizar os arquivos <i><b>.env</i></b> e <i><b>app/config/database.php</i></b>:
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+        (verificar se o host e a porta estão iguais no MySQL e nos arquivos do PHP)
 
-## Laravel Sponsors
+        DB_HOST=localhost
+        DB_PORT=3306
+        DB_DATABASE=/*nome do banco de dados*/
+        DB_USERNAME=/*inserir nome de usuario aqui*/
+        DB_PASSWORD=/*inserir senha aqui*/
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+    e
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-- [Appoly](https://www.appoly.co.uk)
-- [OP.GG](https://op.gg)
+        'host' => env('DB_HOST', 'localhost'),
+        'port' => env('DB_PORT', '3306'),
+        'database' => env('DB_DATABASE', '/*nome do banco de dados*/'),
+        'username' => env('DB_USERNAME', '/*inserir nome de usuario aqui*/'),
+        'password' => env('DB_PASSWORD', '/*inserir senha aqui*/'),
 
-## Contributing
+- Após isso, rodar os comandos abaixo para criar e popular as tabelas no banco de dados:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+    <i>php artisan migrate<br></i>
+    <i>php artisan db:seed</i> (Este comando é opcional. Ele apenas irá popular a tabela de contatos para fim de verificação)
 
-## Code of Conduct
+- Após as etapas acima serem realizadas, o programa está pronto para uso. Execute o comando abaixo para iniciar a API:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+    <i>php artisan serve</i>
 
-## Security Vulnerabilities
+Funcionamento:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+A API possui três funcionalidades: criação de contatos, listagem e exclusão de contatos.
 
-## License
+Requisição   | Caminho                          | Ações        | Nome da rota
+-------------|----------------------------------|--------------|------------------
+GET          | /contatos                        | index        | ContatoController@index
+POST         | /contato/novo                    | store        | ContatoController@store
+GET          | /contato/busca/id/{id}           | showId       | ContatoController@showId
+GET          | /contato/busca/nome/{nome}       | showNome     | ContatoController@showNome
+GET          | /contato/busca/email/{email}     | showEmail    | ContatoController@showEmail
+DELETE       | /contato/apagar/{id}             | destroy      | ContatoController@destroy
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Funções:
+
+- Listagem:
+
+    A função index faz uma requisição GET à API e retorna em JSON todos os contatos cadastrados no banco de dados. Ela é executada na URL http://localhost:8000/api/contatos.
+
+    A aplicação possui filtros de pesquisa. Através da URL http://localhost:8000/api/contato/busca/id/{id}, será retornado um JSON específico e unico referente ao id pesquisado. Caso o usuário precise realizar uma busca pelo nome, deve ser feito na URL http://localhost:8000/api/contato/busca/nome/{nome}. O resultado será um ou mais JSON referentes ao nome pesquisado, ou vazio se não for encontrado nenhum cadastro referente a esse nome. Para buscas por email, deve-se realizar na URL http://localhost:8000/api/contato/busca/email/{email}. O funcionamento é parecido com a busca pelo nome, retornando (ou não) um ou mais JSON dados referentes à busca, em formato JSON.
+
+- Cadastro
+
+    O cadastro de um novo contato é feito pela URL http://localhost:8000/api/contato/novo. Deve ser informado o nome, telefone, email e CEP da pessoa a ser cadastrada. O CEP é verificado em tempo real através da API ViaCEP. As informações deste CEP são armazenadas em um objeto e inseridas em uma tabela do banco de dados, que possui a finalidade de persistir os dados dos CEPs. Caso o CEP já exista nessa tabela, ele não é inserido novamente, ou seja, não há informações repetidas. Caso o CEP seja válido, o cadastro é realizado com sucesso; se não, uma mensagem é exibida informando que aquele CEP não é válido e interrompendo todo o processo.
+
+- Exclusão
+
+    Caso o usuário queira deletar um contato, utiliza-se a URL http://localhost:8000/api/contato/apagar/{id}. Informa-se o id do usuário a ser apagado e pronto, ele é totalmente deletado da base de dados.
+    
+    
+<b>ATENÇÃO</b>:
+
+Para o funcionamento da API ViaCEP, a versão do PHP instalada deve ser maior ou igual a 5.3.0, e a versão do Laravel deve ser ~5.0. A que foi utilizada nesse projeto é a 5.8.18. Caso seja atualizada para uma versão acima, a API ViaCEP <b>NÃO</b> irá funcionar.
+
+Autor: Leonardo de Figueiredo Meliande
+
+   <IMG SRC="https://pa1.narvii.com/6445/2effbe46653f3c5604386e6802c9e7ea8de0f46a_hq.gif">  
