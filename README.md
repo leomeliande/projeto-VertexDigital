@@ -69,11 +69,16 @@ Funções:
 - Exclusão
 
     Caso o usuário queira deletar um contato, utiliza-se a URL http://localhost:8000/api/contato/apagar/{id}. Informa-se o id do usuário a ser apagado e pronto, ele é totalmente deletado da base de dados.
-    
+    <br>
+    <br>
     
 <b>ATENÇÃO</b>:
 
 Para o funcionamento da API ViaCEP, a versão do PHP instalada deve ser maior ou igual a 5.3.0, e a versão do Laravel deve ser ~5.0. A que foi utilizada nesse projeto é a 5.8.18. Caso seja atualizada para uma versão acima, a API ViaCEP <b>NÃO</b> irá funcionar.
+<br>
+    <br>
+    <br>
+    <br>
 
 Autor: Leonardo de Figueiredo Meliande
 
