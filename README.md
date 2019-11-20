@@ -24,7 +24,7 @@ Esta é uma API para armazenamento de contatos, uma agenda que contém dados sim
     DB_USERNAME=/*inserir nome de usuario aqui*/
     DB_PASSWORD=/*inserir senha aqui*/
 ```
-e
+    e
 ```
     'host' => env('DB_HOST', 'localhost'),
     'port' => env('DB_PORT', '3306'),
