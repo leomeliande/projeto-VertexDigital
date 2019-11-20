@@ -37,7 +37,7 @@ Esta é uma API para armazenamento de contatos, uma agenda que contém dados sim
     php artisan migrate
     php artisan db:seed *
 ``` 
-**Este comando é opcional. Ele apenas irá popular a tabela de contatos para fim de verificação)*
+**Este comando é opcional. Ele apenas irá popular a tabela de contatos para fim de verificação*
 
 - Após as etapas acima serem realizadas, o programa está pronto para uso. Execute o comando abaixo para iniciar a API:
 ```
