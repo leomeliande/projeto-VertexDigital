@@ -54,20 +54,19 @@ GET          | /contato/busca/nome/{nome}       | showNome     | ContatoControll
 GET          | /contato/busca/email/{email}     | showEmail    | ContatoController@showEmail
 DELETE       | /contato/apagar/{id}             | destroy      | ContatoController@destroy
 
-<br>
 <b>4. Funcionalidades:</b>
-<br>
-   <b><i>4.1. Listagem:</b></i>
+
+<b><i>4.1. Listagem:</b></i>
 
 A função index faz uma requisição GET à API e retorna em JSON todos os contatos cadastrados no banco de dados. Ela é executada na URL http://localhost:8000/api/contatos.
 
 A aplicação possui filtros de pesquisa. Através da URL http://localhost:8000/api/contato/busca/id/{id}, será retornado um JSON específico e unico referente ao id pesquisado. Caso o usuário precise realizar uma busca pelo nome, deve ser feito na URL http://localhost:8000/api/contato/busca/nome/{nome}. O resultado será um ou mais JSON referentes ao nome pesquisado, ou vazio se não for encontrado nenhum cadastro referente a esse nome. Para buscas por email, deve-se realizar na URL http://localhost:8000/api/contato/busca/email/{email}. O funcionamento é parecido com a busca pelo nome, retornando (ou não) um ou mais JSON dados referentes à busca, em formato JSON.
 
-   <b><i>4.2. Cadastro</b></i>
+<b><i>4.2. Cadastro</b></i>
 
 O cadastro de um novo contato é feito pela URL http://localhost:8000/api/contato/novo. Deve ser informado o nome, telefone, email e CEP da pessoa a ser cadastrada. O CEP é verificado em tempo real através da API ViaCEP. As informações deste CEP são armazenadas em um objeto e inseridas em uma tabela do banco de dados, que possui a finalidade de persistir os dados dos CEPs. Caso o CEP já exista nessa tabela, ele não é inserido novamente, ou seja, não há informações repetidas. Caso o CEP seja válido, o cadastro é realizado com sucesso; se não, uma mensagem é exibida informando que aquele CEP não é válido e interrompendo todo o processo.
 
-   <b><i>4.3. Exclusão</b></i>
+<b><i>4.3. Exclusão</b></i>
 
 Caso o usuário queira deletar um contato, utiliza-se a URL http://localhost:8000/api/contato/apagar/{id}. Informa-se o id do usuário a ser apagado e pronto, ele é totalmente deletado da base de dados.
 <br>
