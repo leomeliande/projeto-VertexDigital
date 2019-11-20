@@ -56,7 +56,7 @@ DELETE       | /contato/apagar/{id}             | destroy      | ContatoControll
 
 <br>
 <b>4. Funcionalidades:</b>
-
+<br>
    <b><i>4.1. Listagem:</b></i>
 
 A função index faz uma requisição GET à API e retorna em JSON todos os contatos cadastrados no banco de dados. Ela é executada na URL http://localhost:8000/api/contatos.
