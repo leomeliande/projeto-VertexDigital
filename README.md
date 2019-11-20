@@ -88,6 +88,6 @@ Para o funcionamento da API ViaCEP, a versão do PHP instalada deve ser maior ou
 <br>
 <br>
 
-Autor: Leonardo de Figueiredo Meliande
+**Autor: Leonardo de Figueiredo Meliande**
 
    <IMG SRC="https://pa1.narvii.com/6445/2effbe46653f3c5604386e6802c9e7ea8de0f46a_hq.gif">  
