@@ -54,6 +54,7 @@ GET          | /contato/busca/nome/{nome}       | showNome     | ContatoControll
 GET          | /contato/busca/email/{email}     | showEmail    | ContatoController@showEmail
 DELETE       | /contato/apagar/{id}             | destroy      | ContatoController@destroy
 
+<br>
 <b>4. Funcionalidades:</b>
 
    <b><i>4.1. Listagem:</b></i>
