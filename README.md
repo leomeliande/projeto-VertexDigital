@@ -62,7 +62,7 @@ DELETE       | /contato/apagar/{id}             | destroy      | ContatoControll
 
 A função index faz uma requisição GET à API e retorna em JSON todos os contatos cadastrados no banco de dados. Ela é executada na URL http://localhost:8000/api/contatos.
 
-A aplicação possui filtros de pesquisa. Através da URL http://localhost:8000/api/contato/busca/id/{id}, será retornado um JSON específico e unico referente ao id pesquisado. Caso o usuário precise realizar uma busca pelo nome, deve ser feito na URL http://localhost:8000/api/contato/busca/nome/{nome}. O resultado será um ou mais JSON referentes ao nome pesquisado, ou vazio se não for encontrado nenhum cadastro referente a esse nome. Para buscas por email, deve-se realizar na URL http://localhost:8000/api/contato/busca/email/{email}. O funcionamento é parecido com a busca pelo nome, retornando (ou não) um ou mais JSON dados referentes à busca, em formato JSON.
+A aplicação possui filtros de pesquisa. Através da URL http://localhost:8000/api/contato/busca/id/{id}, será retornado um JSON específico e unico referente ao id pesquisado. Caso o usuário precise realizar uma busca pelo nome, deve ser feito na URL http://localhost:8000/api/contato/busca/nome/{nome}. O resultado será um ou mais JSON referentes ao nome (ou parte do nome) pesquisado, ou vazio se não for encontrado nenhum cadastro referente a esse nome. Para buscas por email, deve-se realizar na URL http://localhost:8000/api/contato/busca/email/{email}. O funcionamento é parecido com a busca pelo nome, retornando (ou não) um ou mais JSON dados referentes à busca, em formato JSON.
 
 <b><i>4.2. Cadastro</b></i>
 
